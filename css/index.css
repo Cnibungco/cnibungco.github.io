@@ -213,8 +213,8 @@ nav
 }*/
 .rhodyHero
 {
-    background-color: #ff7461;
-    background-image: url('../content/rides/rides_hero.svg');
+    background-color: #5554CB;
+    background-image: url('../content/knyts/hero.svg');
 }
 /*.rhodyHero:hover{
     background-image: url("../videos/rides_ani_logo.gif");
