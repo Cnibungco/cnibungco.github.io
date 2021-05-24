@@ -267,7 +267,7 @@ nav
 
 .heroInfo
 {
-    z-index: 2;
+    z-index: 1;
     /*position: absolute;*/  
     display: flex;
     width: 100%;
@@ -477,7 +477,7 @@ nav
 {
     position: relative;
     flex: 1;
-    height: 85vh;
+    height: 55vh;
 
 
     display: flex;
@@ -908,7 +908,7 @@ img[data-src]
     padding-top: 15px;
     letter-spacing: 0.75px;
     width: 100%;
-    text-align: left;
+    text-align: center;
 }
 
 
