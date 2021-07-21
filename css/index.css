@@ -1021,7 +1021,7 @@ img[data-src]
     }
 
     .brutal{
-        display: none;
+       /* display: none;*/
     }
     .fake{
         display: block;
