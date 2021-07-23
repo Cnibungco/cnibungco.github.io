@@ -258,7 +258,7 @@ nav
     background-image: url('../content/ibm/WA-bg.svg');
 }
 .ibmDiscoveryHero{
-    background-image: url('../content/ibm/WD-background.svg');
+    background-image: url('../content/gaycity/hero.gif');
 }
 .ggfHero{
     background-image: url('../content/ggf/ggf-hero.svg');
@@ -489,6 +489,7 @@ nav
     background-position: center;
     background-size: cover;
 }
+
 
 .landingHero{
     height: 50vh;
