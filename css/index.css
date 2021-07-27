@@ -200,7 +200,7 @@ nav
 {
 /*    border: 1px solid grey;*/
     background-color: #F5F5F5;
-    background-image: url('../content/wework/wework_hero.svg');
+    background-image: url('../content/everout/splash.jpg');
 }
 .tgoHero
 {
@@ -624,7 +624,7 @@ input[type='checkbox']
 
     width: 100%;
     height: auto;
-    margin: 15% auto;
+    margin: 10% auto;
 
     max-width: 960px;
 
@@ -637,10 +637,6 @@ input[type='checkbox']
     margin-bottom: 15px;
 }
 
-
-
-
-
 .textCont
 {
     position: relative;
@@ -651,8 +647,8 @@ input[type='checkbox']
     width: 100%;
     height: auto;
     margin: 0 auto;
-    padding-top: 3%;
-    padding-bottom: 3%;
+    padding-top: 5%;
+    padding-bottom: 5%;
 
     flex-wrap: nowrap;
     justify-content: flex-start;
@@ -666,9 +662,9 @@ input[type='checkbox']
     padding-right: 30px;
 }
 .showingText{
-
+    padding-left: 30px;
+    padding-right: 30px;
 }
-
 
 
 .largeText
