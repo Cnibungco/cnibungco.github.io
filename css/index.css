@@ -216,6 +216,11 @@ nav
     background-color: #5554CB;
     background-image: url('../content/knyts/knytshero.jpg');
 }
+.mflaHero
+{
+    background-color: #5554CB;
+    background-image: url('../content/mfla/mflahero.svg');
+}
 /*.rhodyHero:hover{
     background-image: url("../videos/rides_ani_logo.gif");
 }*/
@@ -259,6 +264,9 @@ nav
 }
 .ibmDiscoveryHero{
     background-image: url('../content/gaycity/hero.gif');
+}
+.rapid7Hero{
+    background-image: url('../content/rapid7/vmhero.jpg');
 }
 .ggfHero{
     background-image: url('../content/ggf/ggf-hero.svg');
