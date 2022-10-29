@@ -202,6 +202,12 @@ nav
     background-color: #F5F5F5;
     background-image: url('../content/everout/splash.jpg');
 }
+.edifecsHero
+{
+/*    border: 1px solid grey;*/
+    background-color: #F5F5F5;
+    background-image: url('../content/edifecs/edifecs-logo.jpg');
+}
 .tgoHero
 {
     border: 1px solid black;
