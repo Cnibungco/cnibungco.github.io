@@ -1,8 +1,8 @@
 import { NextRequest, NextResponse } from 'next/server';
 
 /**
- * Only run middleware on /portfolio — not /, static assets, or API routes.
- * Homepage and all non-portfolio pages stay public (no password prompt).
+ * Middleware runs only for portfolio app routes — never for `/`, `/_next`, static files, etc.
+ * Homepage and every non-`/portfolio` page stay fully public (no Basic auth).
  */
 export const config = {
   matcher: ['/portfolio', '/portfolio/:path*'],
@@ -108,16 +108,23 @@ function createUnauthorizedResponse(): NextResponse {
   return response;
 }
 
-function isPortfolioProtectedPath(pathname: string): boolean {
+/**
+ * `/portfolio` and paths under `/portfolio/...` only.
+ * Does not match `/portfolioother` (no boundary) — only real portfolio routes.
+ */
+function isPortfolioRoute(pathname: string): boolean {
   return pathname === '/portfolio' || pathname.startsWith('/portfolio/');
 }
 
 export function middleware(request: NextRequest) {
-  const { pathname } = request.nextUrl;
-  if (!isPortfolioProtectedPath(pathname)) {
+  const pathname = request.nextUrl.pathname;
+
+  // Public: homepage and all routes outside /portfolio — no auth
+  if (!isPortfolioRoute(pathname)) {
     return NextResponse.next();
   }
 
+  // Portfolio routes only — require Basic auth below
   const expectedCredentials = getCredentials();
   if (!expectedCredentials) {
     return createUnauthorizedResponse();
