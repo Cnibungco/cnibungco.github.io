@@ -1,0 +1,111 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #0f172a;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 4px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.5);
+  }
+
+  ::selection {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: #ffffff;
+  }
+  }
+
+@layer utilities {
+  .divider-thin {
+    border-color: rgba(255, 255, 255, 0.2);
+  }
+
+  /* Scanlines: fixed layer behind page content only (not over images/screenshots) */
+  .scanlines-background {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+  }
+
+  .scanlines-background::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      to bottom,
+      transparent 50%,
+      rgba(0, 0, 0, 0.02) 50%
+    );
+    background-size: 100% 4px;
+    pointer-events: none;
+    animation: scan 8s linear infinite;
+  }
+
+  @keyframes scan {
+    0% {
+      transform: translateY(0);
+    }
+    100% {
+      transform: translateY(4px);
+    }
+  }
+
+  /* Glitch text effect */
+  @keyframes glitch {
+    0%, 100% {
+      text-shadow: 
+        2px 0 #ff00ff,
+        -2px 0 #00ffff;
+    }
+    25% {
+      text-shadow: 
+        -2px 0 #ff00ff,
+        2px 0 #00ffff;
+    }
+    50% {
+      text-shadow: 
+        2px 0 #00ffff,
+        -2px 0 #ff00ff;
+    }
+    75% {
+      text-shadow: 
+        -2px 0 #00ffff,
+        2px 0 #ff00ff;
+    }
+  }
+
+  .glitch-hover:hover {
+    animation: glitch 0.3s infinite;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+
+    .scanlines-background::before {
+      animation: none;
+    }
+  }
+}
