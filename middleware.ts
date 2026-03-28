@@ -1,7 +1,11 @@
 import { NextRequest, NextResponse } from 'next/server';
 
+/**
+ * Only run middleware on /portfolio — not /, static assets, or API routes.
+ * Homepage and all non-portfolio pages stay public (no password prompt).
+ */
 export const config = {
-  matcher: '/portfolio/:path*',
+  matcher: ['/portfolio', '/portfolio/:path*'],
 };
 
 const REALM = 'Portfolio Access';
@@ -104,7 +108,16 @@ function createUnauthorizedResponse(): NextResponse {
   return response;
 }
 
+function isPortfolioProtectedPath(pathname: string): boolean {
+  return pathname === '/portfolio' || pathname.startsWith('/portfolio/');
+}
+
 export function middleware(request: NextRequest) {
+  const { pathname } = request.nextUrl;
+  if (!isPortfolioProtectedPath(pathname)) {
+    return NextResponse.next();
+  }
+
   const expectedCredentials = getCredentials();
   if (!expectedCredentials) {
     return createUnauthorizedResponse();
