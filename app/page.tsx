@@ -19,9 +19,13 @@ export default function Home() {
           {/* Bio Text */}
           <div className="space-y-6">
             <p className="font-newsreader text-lg lg:text-xl leading-relaxed text-white w-full max-w-full">
-              Camille Nibungco is a Los Angeles-based product designer and creative 
-              technologist interested in facilitating and creating experiences that 
-              promote social equity, connection, and collaboration in digital spaces.
+              I am a Los Angeles-based product designer and creative technologist who works at the
+              intersection of AI, complex data systems, and public good. With a background in software
+              engineering (ex-Amazon), I bring a developer&apos;s instinct to design problems: starting
+              from the data model, building in code when it counts, and translating dense backend logic
+              into interfaces that practitioners can actually trust. My work spans enterprise healthcare
+              operations, MLOps tooling, and civic technology, and I care deeply about who the technology
+              is actually for.
             </p>
 
             <div className="space-y-4 text-base">
@@ -40,18 +44,18 @@ export default function Home() {
                   </a>
                 </li>
                 <li>
+                  • Prototyped and wrote about a community sourced platform for{' '}
+                  <a href="https://collectiveaction.school/yearbook/mapping-feminist-la" className="underline hover:text-white">
+                    Mapping Feminist LA
+                  </a>
+                </li>
+                <li>
                   • Produced soundscapes for the{' '}
                   <a href="https://www.deniseshantebrown.com/feltfutures-bookcollection" className="underline hover:text-white">
                     Felt Futures Sensorium
                   </a>
                 </li>
                 <li>• Built an art installation called "Channel Your Fortune"</li>
-                <li>
-                  • Prototyped and wrote about a community sourced platform for{' '}
-                  <a href="https://collectiveaction.school/yearbook/mapping-feminist-la" className="underline hover:text-white">
-                    Mapping Feminist LA
-                  </a>
-                </li>
                 <li>
                   • Designed a new Discovery feature for{' '}
                   <a href="http://bandcamp.com" className="underline hover:text-white">
@@ -97,10 +101,30 @@ export default function Home() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
           {[
-            { subtitle: 'Cotiviti - Design for Enterprise Healthcare Data-Driven Dashboards', image: '/EM.png', url: '/portfolio' },
-            { subtitle: 'Felt Futures Sensorium - Soundscapes for an experimental design memoir', image: '/feltfutures.png', url: 'https://www.deniseshantebrown.com/feltfutures-bookcollection' },
-            { subtitle: "Tenant Bill of Rights Map - Renter's Rights visualization tool for Keep LA Housed", image: '/TBOR.png', url: 'https://antievictionmappingproject.github.io/tbor-policy-map/' },
-            { subtitle: 'Mapping Feminist LA - Prototyping intersectional community resources', image: '/FMLA.png', url: 'https://collectiveaction.school/yearbook/mapping-feminist-la' },
+            {
+              subtitle: 'Cotiviti - Error triage systems, MLOps tooling, and operational dashboards built for analysts working at scale.',
+              outcome: 'AI-assisted workflows and data operations tooling for enterprise healthcare, where accuracy and operator trust are non-negotiable.',
+              image: '/EM.png',
+              url: '/portfolio',
+            },
+            {
+              subtitle: "Tenant Bill of Rights Map - Renter's Rights visualization tool for Keep LA Housed",
+              outcome: 'Built with Keep LA Housed and the Anti-Eviction Mapping Project to help LA renters understand their legal protections.',
+              image: '/TBOR.png',
+              url: 'https://antievictionmappingproject.github.io/tbor-policy-map/',
+            },
+            {
+              subtitle: 'Mapping Feminist LA - Prototyping intersectional community resources',
+              outcome: 'Prototyped an intersectional community resource platform for collective action and feminist organizing in Los Angeles.',
+              image: '/FMLA.png',
+              url: 'https://collectiveaction.school/yearbook/mapping-feminist-la',
+            },
+            {
+              subtitle: 'Felt Futures Sensorium - Soundscapes for an experimental design memoir',
+              outcome: 'Produced soundscapes for an experimental design memoir exploring sensory and speculative futures.',
+              image: '/feltfutures.png',
+              url: 'https://www.deniseshantebrown.com/feltfutures-bookcollection',
+            },
           ].map((project, i) => (
             <a
               key={i}
@@ -114,6 +138,9 @@ export default function Home() {
               </div>
               <p className="mt-3 text-white text-sm lg:text-base">
                 {project.subtitle}
+              </p>
+              <p className="mt-2 text-white text-sm lg:text-base">
+                {project.outcome}
               </p>
             </a>
           ))}

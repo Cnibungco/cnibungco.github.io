@@ -73,7 +73,7 @@ export default function RootLayout({
                   Bandcamp
                 </a>
                 <a
-                  href="mailto:your.email@example.com"
+                  href="mailto:camille.nibungco@gmail.com"
                   className="text-text-secondary hover:text-white transition-colors duration-200"
                 >
                   Email
