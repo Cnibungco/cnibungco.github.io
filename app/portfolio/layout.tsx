@@ -11,9 +11,5 @@ export default function PortfolioLayout({
 }: {
   children: React.ReactNode;
 }) {
-  return (
-    <div className="portfolio-context">
-      {children}
-    </div>
-  );
+  return <div className="bg-ink text-sand">{children}</div>;
 }

@@ -9,16 +9,26 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        'bg-primary': '#0f172a',
-        'bg-secondary': '#1f28a0',
-        'text-primary': '#ffffff',
-        'text-secondary': 'rgba(255, 255, 255, 0.9)',
-        'text-tertiary': 'rgba(255, 255, 255, 0.7)',
-        'accent': '#ffffff',
-        'image-placeholder': '#c8c8c8',
+        'ink': '#141820',
+        'base-2': '#181d27',
+        'accent': '#7FB069',
+        'sand': '#DDD0BC',
+        'sand-dim': 'rgba(221,208,188,0.78)',
+        'sand-muted': 'rgba(221,208,188,0.62)',
+        'sand-dimmer': 'rgba(221,208,188,0.48)',
+        'rule': 'rgba(221,208,188,0.08)',
+        'accent-rule': 'rgba(127,176,105,0.15)',
+        'image-placeholder': '#1a2030',
+        // Legacy aliases — portfolio case studies still reference these
+        'bg-primary': '#141820',
+        'bg-secondary': '#181d27',
+        'text-primary': '#DDD0BC',
+        'text-secondary': 'rgba(221,208,188,0.85)',
+        'text-tertiary': 'rgba(221,208,188,0.68)',
       },
       fontFamily: {
         sans: ['var(--font-inter)', 'system-ui', 'sans-serif'],
+        serif: ['var(--font-newsreader)', 'Georgia', 'serif'],
         mono: ['var(--font-mono)', 'monospace'],
         newsreader: ['var(--font-newsreader)', 'serif'],
       },

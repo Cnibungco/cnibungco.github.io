@@ -1,21 +1,17 @@
-export const portfolioProjectOrder = [
-  'caloptima-dashboard',
-  'inbound-chart-review',
-  'intelligent-error-management',
-] as const;
+import { portfolioProjects } from '@/data/portfolio';
 
-type ProjectSlug = (typeof portfolioProjectOrder)[number];
+const allProjectSlugs = portfolioProjects.map((p) => p.slug);
 
 function getProjectIndex(slug: string): number {
-  return portfolioProjectOrder.indexOf(slug as ProjectSlug);
+  return allProjectSlugs.indexOf(slug);
 }
 
 export function getNextProjectHref(currentSlug: string): string {
   const currentIndex = getProjectIndex(currentSlug);
   if (currentIndex === -1) return '/portfolio';
 
-  const nextIndex = (currentIndex + 1) % portfolioProjectOrder.length;
-  return `/portfolio/${portfolioProjectOrder[nextIndex]}`;
+  const nextIndex = (currentIndex + 1) % allProjectSlugs.length;
+  return `/portfolio/${allProjectSlugs[nextIndex]}`;
 }
 
 export function getPreviousProjectHref(currentSlug: string): string {
@@ -23,7 +19,10 @@ export function getPreviousProjectHref(currentSlug: string): string {
   if (currentIndex === -1) return '/portfolio';
 
   const previousIndex =
-    (currentIndex - 1 + portfolioProjectOrder.length) %
-    portfolioProjectOrder.length;
-  return `/portfolio/${portfolioProjectOrder[previousIndex]}`;
+    (currentIndex - 1 + allProjectSlugs.length) % allProjectSlugs.length;
+  return `/portfolio/${allProjectSlugs[previousIndex]}`;
 }
+
+export {
+  portfolioProjectOrder,
+} from '@/data/portfolio';

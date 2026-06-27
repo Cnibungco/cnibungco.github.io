@@ -14,8 +14,8 @@ const inter = Inter({
 const newsreader = Newsreader({
   subsets: ['latin'],
   variable: '--font-newsreader',
-  weight: ['400', '500', '600'],  // ← this was missing
-  style: ['normal', 'italic'],    // ← this too
+  weight: ['300', '400', '500', '600'],
+  style: ['normal', 'italic'],
   display: 'swap',
 });
 
@@ -32,27 +32,26 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${inter.variable} ${newsreader.variable}`}>
-      <body className="bg-bg-primary text-text-primary antialiased">
-        <div className="scanlines-background" aria-hidden />
+      <body className="bg-ink text-sand antialiased">
         <Navbar />
 
         <main className="relative z-[1] min-h-screen">
           {children}
         </main>
 
-        <footer className="relative z-[1] border-t border-white/20 py-12">
+        <footer className="relative z-[1] py-12 border-t border-rule">
           <div className="max-w-7xl mx-auto px-6 lg:px-12">
             <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
-              <p className="text-text-tertiary text-sm">
+              <p className="text-sm text-sand-muted">
                 © {new Date().getFullYear()} Camille Nibungco. All rights reserved.
               </p>
-              
+
               <div className="flex gap-8 text-sm">
                 <a
                   href="https://linkedin.com/in/camillenibungco"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-text-secondary hover:text-white transition-colors duration-200"
+                  className="text-sm text-sand-dim hover:text-sand transition-colors duration-200"
                 >
                   LinkedIn
                 </a>
@@ -60,7 +59,7 @@ export default function RootLayout({
                   href="https://are.na/camille-nibungco"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-text-secondary hover:text-white transition-colors duration-200"
+                  className="text-sm text-sand-dim hover:text-sand transition-colors duration-200"
                 >
                   Are.na
                 </a>
@@ -68,13 +67,13 @@ export default function RootLayout({
                   href="https://bandcamp.com/camillenibungco"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-text-secondary hover:text-white transition-colors duration-200"
+                  className="text-sm text-sand-dim hover:text-sand transition-colors duration-200"
                 >
                   Bandcamp
                 </a>
                 <a
                   href="mailto:camille.nibungco@gmail.com"
-                  className="text-text-secondary hover:text-white transition-colors duration-200"
+                  className="text-sm text-sand-dim hover:text-sand transition-colors duration-200"
                 >
                   Email
                 </a>

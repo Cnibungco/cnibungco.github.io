@@ -23,7 +23,7 @@ export default function Navbar() {
     } else {
       document.body.style.overflow = 'unset';
     }
-    
+
     return () => {
       document.body.style.overflow = 'unset';
     };
@@ -31,31 +31,30 @@ export default function Navbar() {
 
   return (
     <>
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-bg-primary">
+      <nav className="fixed top-0 left-0 right-0 z-50 bg-ink border-b border-rule">
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
           <div className="flex items-center justify-between h-20 lg:h-24">
-          <Link href="/" className="hover:opacity-80 transition-opacity duration-200">
-            <img 
-              src="/logo.png"
-              alt="Camille Nibungco" 
-              className="h-8 w-auto"
-            />
-          </Link>
-            
+            <Link href="/" className="hover:opacity-80 transition-opacity duration-200">
+              <img
+                src="/logo.png"
+                alt="Camille Nibungco"
+                className="h-8 w-auto"
+              />
+            </Link>
 
             <div className="hidden md:flex items-center gap-8 lg:gap-12">
               {navItems.map((item) => {
                 const isActive = !item.external && pathname.startsWith(item.href);
                 const linkClassName = `relative text-base group transition-colors duration-200 ${
-                  isActive ? 'text-white' : 'text-text-secondary hover:text-white'
+                  isActive ? 'text-sand' : 'text-sand-dim hover:text-sand'
                 }`;
                 const linkContent = (
                   <>
                     {item.name}
                     {isActive && (
-                      <span className="absolute -bottom-1 left-0 right-0 h-px bg-white" />
+                      <span className="absolute -bottom-1 left-0 right-0 h-px bg-accent" />
                     )}
-                    <span className="absolute -bottom-1 left-0 right-0 h-px bg-white scale-x-0 group-hover:scale-x-100 transition-transform duration-200 origin-left" />
+                    <span className="absolute -bottom-1 left-0 right-0 h-px bg-accent scale-x-0 group-hover:scale-x-100 transition-transform duration-200 origin-left" />
                   </>
                 );
                 return item.external ? (
@@ -83,12 +82,12 @@ export default function Navbar() {
               aria-expanded={mobileMenuOpen}
             >
               <span
-                className={`w-6 h-px bg-text-primary transition-all duration-300 ${
+                className={`w-6 h-px bg-sand transition-all duration-300 ${
                   mobileMenuOpen ? 'rotate-45 translate-y-0' : '-translate-y-1.5'
                 }`}
               />
               <span
-                className={`w-6 h-px bg-text-primary transition-all duration-300 ${
+                className={`w-6 h-px bg-sand transition-all duration-300 ${
                   mobileMenuOpen ? '-rotate-45 translate-y-0' : 'translate-y-1.5'
                 }`}
               />
@@ -105,7 +104,7 @@ export default function Navbar() {
         }`}
       >
         <div
-          className="absolute inset-0 bg-bg-primary"
+          className="absolute inset-0 bg-ink"
           onClick={() => setMobileMenuOpen(false)}
         />
 
@@ -114,7 +113,7 @@ export default function Navbar() {
             {navItems.map((item, index) => {
               const isActive = !item.external && pathname.startsWith(item.href);
               const linkClassName = `text-3xl sm:text-4xl font-light transition-all duration-200 ${
-                isActive ? 'text-white' : 'text-text-secondary hover:text-white'
+                isActive ? 'text-sand' : 'text-sand-dim hover:text-sand'
               } ${mobileMenuOpen ? 'animate-slide-down' : ''}`;
               return item.external ? (
                 <a
@@ -141,12 +140,12 @@ export default function Navbar() {
           </nav>
 
           <div className="absolute bottom-12 left-0 right-0 px-6">
-            <div className="flex justify-center gap-8 text-sm text-text-tertiary">
+            <div className="flex justify-center gap-8 text-sm text-sand-dim">
               <a
                 href="https://linkedin.com/in/camillenibungco"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hover:text-white transition-colors duration-200"
+                className="hover:text-sand transition-colors duration-200"
               >
                 LinkedIn
               </a>
@@ -154,7 +153,7 @@ export default function Navbar() {
                 href="https://are.na/camille-nibungco"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hover:text-white transition-colors duration-200"
+                className="hover:text-sand transition-colors duration-200"
               >
                 Are.na
               </a>
@@ -162,13 +161,13 @@ export default function Navbar() {
                 href="https://bandcamp.com/camillenibungco"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hover:text-white transition-colors duration-200"
+                className="hover:text-sand transition-colors duration-200"
               >
                 Bandcamp
               </a>
               <a
                 href="mailto:camille.nibungco@gmail.com"
-                className="hover:text-white transition-colors duration-200"
+                className="hover:text-sand transition-colors duration-200"
               >
                 Email
               </a>
